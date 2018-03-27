@@ -1,0 +1,23 @@
+package com.simulator.test;
+
+import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import com.simulator.service.SimulatorService;
+
+import junit.framework.Assert;
+
+public class SimulatorTest {
+
+	SimulatorService simulatorService;
+	@Test
+	public void testReturnValidateInput()  {
+
+	        
+	        //assertThat(simulatorService.validateInput("100"), false);
+
+	        Assert.assertEquals(false, simulatorService.validateInput("100"));
+	}
+}

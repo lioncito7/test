@@ -1,0 +1,30 @@
+package com.simulator.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import com.simulator.service.SimulatorService;
+
+public class SimulatorTest {
+
+	SimulatorService simulatorService = new SimulatorService();
+	
+	String input ="Simulator";
+	String[] inputs;
+	
+	@Test
+	public void invalidNumberParameterShouldReturnErrorMessage()  {
+		inputs = input.split(" ");
+		 assertEquals(false, simulatorService.validateInputs(inputs));
+	}
+	
+	@Test
+	public void amountLessThan1000ShouldReturnErrorMessage()  {
+		 assertEquals(false, simulatorService.validateInput("100"));
+	}
+	
+	@Test
+	public void amountMoreThan15000ShouldReturnErrorMessage()  {
+		 assertEquals(false, simulatorService.validateInput("16000"));
+	}
+}

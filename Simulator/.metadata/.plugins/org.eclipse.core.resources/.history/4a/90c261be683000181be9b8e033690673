@@ -1,0 +1,18 @@
+package com.simulator.test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnit44Runner;
+
+@RunWith(MockitoJUnit44Runner.class)
+public class SimulatorTest {
+
+	@Test(expected = false)
+	public void testReturnValidateInput()  {
+	        Comparable<String> c= mock(Comparable.class);
+	        when(c.compareTo("Mockito")).thenReturn(1);
+	        when(c.compareTo("Eclipse")).thenReturn(2);
+	        //assert
+	        assertEquals(1, c.compareTo("Mockito"));
+	}
+}

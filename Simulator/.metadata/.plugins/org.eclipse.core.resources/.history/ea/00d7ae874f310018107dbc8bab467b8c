@@ -1,0 +1,24 @@
+package com.simulator.test;
+
+import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.simulator.service.SimulatorService;
+
+import junit.framework.Assert;
+
+public class SimulatorTest {
+
+	@Test
+	public void testReturnValidateInput()  {
+		SimulatorService simulatorService = new SimulatorService();
+	        
+	        //assertThat(simulatorService.validateInput("100"), false);
+
+	        Assert.assertEquals(false, simulatorService.validateInput("100"));
+	}
+}

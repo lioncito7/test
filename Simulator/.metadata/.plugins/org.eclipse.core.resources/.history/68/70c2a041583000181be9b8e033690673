@@ -1,0 +1,30 @@
+package com.simulator;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SimulatorConsoleApplication implements CommandLineRunner{{
+
+	@Autowired
+	private GameServer gameServer;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(SimulatorConsoleApplication.class, args);
+
+	}
+
+	@Override
+	public void run(String... arg0) throws Exception {
+		 String playersFile = "Players.txt";
+		 String totalWinLoseFile = "TotalWinLose_Players.txt";
+		    
+         Helper.loadPlayers(playersFile);
+         Helper.loadHistoryPlayers(totalWinLoseFile);
+		
+		 gameServer.startServer();
+	}
+
+	
+
+}
